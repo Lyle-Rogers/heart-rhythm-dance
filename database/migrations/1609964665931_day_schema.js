@@ -6,8 +6,10 @@ const Schema = use('Schema')
 class DaySchema extends Schema {
   up () {
     this.create('days', (table) => {
+      table.increments()
       table.string('day')
       table.string('description', 100)
+      table.timestamps()
     })
   }
 

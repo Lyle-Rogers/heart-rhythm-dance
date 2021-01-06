@@ -17,6 +17,8 @@
 const Route = use('Route')
 
 Route.get('/', 'CalendarController.loadCalendar')
+Route.get('/calendar/:day', 'CalendarController.descriptionClick')
+Route.post('/calendar/description_change/:day', 'CalendarController.ChangeDescription')
 
 Route.on('/sign_in').render('pages/sign_in')
 Route.post('/sign_in', 'SignInController.login')

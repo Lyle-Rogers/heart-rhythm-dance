@@ -1,2 +1,41 @@
 .calendar_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 4px solid black;
+  border-radius: 11px;
+}
+
+.day_number {
+  font-size: 24px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.description_textarea {
+  resize: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  width: 9em;
+  height: 4em;
 }
