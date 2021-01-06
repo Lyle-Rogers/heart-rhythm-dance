@@ -1,0 +1,50 @@
+@layout('main')
+
+@section('extracss')
+  {{ style('pages/calendar') }}
+@endsection
+
+@section('content')
+  <div class="calendar_content">
+    <div class="months_wrapper">
+
+      <div class="month_container">
+        <h1>JANUARY</h1>
+        <div class="days">
+          <form action="{{ route('CalendarController.ChangeDescription', { day: 'jan1'}) }}" method="post">
+            {{ csrfField() }}
+            <div class="day">
+              <h3 class="day_number">1</h3>
+              @loggedIn
+                @if(descriptionClicked == 'jan1')
+                  <textarea 
+                    class="description_textarea" 
+                    name="description" 
+                  >{{ jan1.description }}</textarea>
+                @else
+                  <a class="description_button" href="{{ route('CalendarController.descriptionClick', { day: 'jan1'}) }}">
+                    <textarea 
+                      class="description_textarea" 
+                      readonly
+                    >{{ jan1.description }}</textarea>
+                  </a>
+                @endif
+              @else
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ jan1.description }}</textarea>
+              @endloggedIn
+            </div>
+            @loggedIn
+              @if(descriptionClicked == 'jan1')
+                <button class="done_btn" type="submit">DONE</button>
+              @endif
+            @endloggedIn
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+@endsection

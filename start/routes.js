@@ -16,4 +16,11 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.get('/', 'CalendarController.loadCalendar')
+
+Route.on('/sign_in').render('pages/sign_in')
+Route.post('/sign_in', 'SignInController.login')
+Route.get('/sign_out', async ({ auth, response }) => {
+  await auth.logout();
+  return response.redirect('/');
+})

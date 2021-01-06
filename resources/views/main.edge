@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <script src="https://kit.fontawesome.com/7afd67fc69.js" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
+
+  {{ style('main') }}
+
+  <title>Heart Rhythm Dance 2021</title>
+
+  @!section('extracss') 
+</head>
+<body>
+  <div class="main_content">
+    <div class="signin_signout_btns">
+      @loggedIn
+        <a class="sign_out_btn" href="/sign_out">Sign Out</a>
+      @else
+        <a class="sign_in_btn" href="/sign_in">Sign In</a>
+      @endloggedIn
+    </div>
+    <div class="logo_container">
+      <a class="logo_btn" href="/"><h1 class="logo">Heart Rhythm Dance 2021</h1></a>
+    </div>
+  </div>
+  <div class="content_container">
+    @!section('content')
+  </div> 
+</body>
+</html>
