@@ -30,13 +30,13 @@ Route.get('/sign_out', async ({ auth, response }) => {
 })
 
 Route.get('/blog', 'BlogController.loadBlog')
-Route.post('/blog', 'BlogController.sendBlog')
+Route.post('/blog', 'BlogController.sendBlog').validator('Blog')
 Route.get('/blog/blog_delete/:id', 'BlogController.deleteBlog')
 Route.get('/blog/blog_edit/:id', 'BlogController.editBlog')
-Route.post('/blog/blog_update/:id', 'BlogController.updateBlog')
+Route.post('/blog/blog_update/:id', 'BlogController.updateBlog').validator('Blog')
 
 Route.get('blog_comments/:id', 'BlogController.loadComments')
-Route.post('blog_comments/:id', 'BlogController.sendBlogComment')
+Route.post('blog_comments/:id', 'BlogController.sendBlogComment').validator('BlogComments')
 Route.get('blog_comments/delete/:id', 'BlogController.deleteComment')
 
 Route.on('/calendar').render('calendar/months_list')

@@ -66,6 +66,10 @@ span {
   text-align: center;
 }
 
+.edit_mode_error_span {
+  margin-top: 8px;
+}
+
 .blog_wrapper {
   overflow-y: scroll;
   height: 92.5em; 
