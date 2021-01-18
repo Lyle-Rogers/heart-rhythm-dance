@@ -6,7 +6,7 @@
 
 .months_wrapper {
   overflow-y: scroll;
-  height: 94.3em;
+  height: 99.3em;
   margin-left: 13px;
 }
 
@@ -15,7 +15,7 @@
   and (device-height : 812px) 
   and (-webkit-device-pixel-ratio : 3) { 
     .months_wrapper {
-      height: 118em !important;
+      height: 123em !important;
     }
   }
 

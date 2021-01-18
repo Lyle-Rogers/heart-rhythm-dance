@@ -8,48 +8,96 @@ html, body {
   padding: 0;
 }
 
+*::-webkit-scrollbar {
+  width: 0px;
+}
+
 .main_content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   background-color: gray;
-  height: 14em;
-}
-
-.signin_signout_btns {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3.3em;
-}
-
-.sign_in_btn {
-  font-size: 40px;
-  margin-left: 21.1em;
-  font-family: 'Roboto', sans-serif;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.sign_out_btn {
-  font-size: 38px;
-  margin-left: 21.6em;
-  font-family: 'Roboto', sans-serif;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  font-weight: 600;
+  height: 9.6em;
 }
 
 .logo_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 33px;
+  font-size: 20px;
   font-family: 'Work Sans', sans-serif;
   align-self: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .logo_btn {
   text-decoration: none;
   color: rgb(0, 0, 0);
+}
+
+.navigation_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Roboto Slab', serif;
+  letter-spacing: 1px;
+  font-size: 35px;
+}
+
+.nav_1 {
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  border-radius: 25px 0px 0px 25px;
+  color: white;
+  text-decoration: none;
+  background-color: rgb(13, 22, 29);
+}
+
+.nav_2 {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  margin-left: 3px;
+  color: white;
+  text-decoration: none;
+  background-color: rgb(13, 22, 29);
+}
+
+.nav_3 {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 13px;
+  padding-bottom: 5px;
+  margin-left: 3px;
+  border-radius: 0px 25px 25px 0px;
+  color: white;
+  text-decoration: none;
+  background-color: rgb(13, 22, 29);
+}
+
+.nav_4 {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  margin-left: 3px;
+  color: white;
+  text-decoration: none;
+  background-color: rgb(13, 22, 29);
+}
+
+.nav_5 {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 13px;
+  padding-bottom: 5px;
+  margin-left: 3px;
+  border-radius: 0px 25px 25px 0px;
+  color: white;
+  text-decoration: none;
+  background-color: rgb(13, 22, 29);
 }

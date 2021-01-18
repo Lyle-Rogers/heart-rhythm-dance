@@ -1,0 +1,91 @@
+@layout('main')
+
+@section('extracss')
+  {{ style('pages/blog') }}
+@endsection
+
+@section('content')
+@if(admin === true)
+  @if(editMode === true)
+    <form action="{{ route('BlogController.updateBlog', { id: blogBeingEdited.id }) }}" method="POST">
+      {{ csrfField() }}
+
+      <div class="textarea_content">
+        <textarea 
+          id="blog_textarea_in_edit_mode" 
+          name="blog_message" 
+          value="{{ old('blog_message', '') }}"
+        >{{ blogBeingEdited.blog_message }}</textarea>
+        <div class="send_btn_container">
+          <button type="submit" class="send_btn"><i class="fas fa-angle-double-right"></i></button>
+        </div>
+      </div>
+      <div class="error_content">
+        @if(hasErrorFor('blog_message'))
+          <span>
+            {{ getErrorFor('blog_message') }}
+          </span>
+        @endif
+      </div>
+    </form>
+  @else
+    <form action="{{ route('BlogController.sendBlog') }}" method="POST">
+      {{ csrfField() }}
+
+      <div class="textarea_content">
+        <script>
+          function autoheight(x) {
+            x.style.height = "5px";
+            x.style.height = (15+x.scrollHeight)+"px";
+          }
+        </script>
+        <textarea 
+          id="blog_textarea" 
+          name="blog_message" 
+          onkeyup="autoheight(this)"
+          value="{{ old('blog_message', '') }}"
+        ></textarea>
+        <div class="send_btn_container">
+          <button type="submit" class="send_btn"><i class="fas fa-angle-double-right"></i></button>
+        </div>
+      </div>
+      <div class="error_content">
+        @if(hasErrorFor('blog_message'))
+          <span>
+            {{ getErrorFor('blog_message') }}
+          </span>
+        @endif
+      </div>
+    </form>
+  @endif
+@else
+  <div class="extra_space"></div>
+@endif
+<div class="blog_wrapper">
+  @each(blog in blogs)
+    <div class="blog_content">
+      <div class="username">
+        <h4>{{ blog.username }}</h4>
+      </div>
+      <div class="blog_container">
+        <p class="blog">{{ blog.blog_message }}</p>
+      </div>
+      <div class="delete_edit_comments_btns_content">
+        @if(admin === true)
+          <div class="delete_edit_btns_container">
+            <a class="delete_btn" href="{{ route('BlogController.deleteBlog', { id: blog.id }) }}"><i id="delete_svg" class="fas fa-trash"></i></a>
+            <a class="edit_btn" href="{{ route('BlogController.editBlog', { id: blog.id }) }}"><i id="edit_svg" class="fas fa-pencil-alt"></i></a>
+          </div>
+          <div class="comments_btn_content">
+            <a class="comments_btn" href="{{ route('BlogController.loadComments', { id: blog.id }) }}">Comments {{ blog.comment_amount }}</a>
+          </div>
+        @else
+          <div class="comments_btn_content_2">
+            <a class="comments_btn_2" href="{{ route('BlogController.loadComments', { id: blog.id }) }}">Comments {{ blog.comment_amount }}</a>
+          </div>
+        @endif
+      </div>
+    </div>
+  @endeach
+</div>
+@endsection

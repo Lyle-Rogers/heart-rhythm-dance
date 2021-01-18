@@ -1,0 +1,1034 @@
+@layout('main')
+
+@section('extracss')
+  {{ style('calendar_styles') }}
+@endsection
+
+@section('content')
+<div class="calendar_wrapper">
+  <div class="months_list_container">
+    <a href="/january">JANUARY</a>
+    <a href="/february">FEBRUARY</a>
+    <a href="/march">MARCH</a>
+    <a href="/april">APRIL</a>
+    <a href="/may">MAY</a>
+    <a href="/june">JUNE</a>
+    <a href="/july">JULY</a>
+  </div>
+  <div class="month_name_container">
+    <h1 class="month_name">AUGUST</h1>
+  </div>
+  <div class="month">
+    <div class="week_days">
+      <div class="sunday">Sunday</div>
+      <div class="monday">Monday</div>
+      <div class="tuesday">Tuesday</div>
+      <div class="wednesday">Wednesday</div>
+      <div class="thursday">Thursday</div>
+      <div class="friday">Friday</div>
+      <div class="saturday">Saturday</div>
+    </div>
+    <div class="days">
+      <div class="extra_space_8"></div>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug1'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">1</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug1')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug1.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug1' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug1.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug1.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug1')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug2'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">2</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug2')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug2.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug2' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug2.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug2.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug2')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug3'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">3</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug3')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug3.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug3' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug3.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug3.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug3')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug4'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">4</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug4')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug4.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug4' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug4.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug4.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug4')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug5'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">5</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug5')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug5.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug5' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug5.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug5.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug5')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug6'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">6</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug6')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug6.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug6' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug6.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug6.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug6')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug7'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">7</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug7')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug7.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug7' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug7.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug7.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug7')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug8'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">8</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug8')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug8.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug8' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug8.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug8.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug8')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug9'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">9</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug9')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug9.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug9' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug9.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug9.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug9')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug10'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">10</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug10')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug10.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug10' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug10.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug10.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug10')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug11'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">11</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug11')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug11.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug11' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug11.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug11.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug11')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug12'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">12</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug12')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug12.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug12' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug12.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug12.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug12')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug13'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">13</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug13')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug13.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug13' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug13.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug13.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug13')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug14'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">14</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug14')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug14.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug14' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug14.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug14.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug14')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug15'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">15</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug15')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug15.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug15' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug15.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug15.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug15')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug16'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">16</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug16')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug16.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug16' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug16.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug16.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug16')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug17'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">17</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug17')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug17.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug17' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug17.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug17.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug17')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug18'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">18</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug18')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug18.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug18' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug18.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug18.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug18')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug19'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">19</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug19')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug19.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug19' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug19.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug19.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug19')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug20'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">20</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug20')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug20.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug20' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug20.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug20.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug20')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug21'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">21</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug21')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug21.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug21' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug21.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug21.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug21')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug22'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">22</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug22')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug22.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug22' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug22.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug22.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug22')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug23'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">23</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug23')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug23.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug23' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug23.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug23.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug23')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug24'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">24</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug24')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug24.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug24' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug24.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug24.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug24')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug25'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">25</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug25')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug25.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug25' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug25.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug25.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug25')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug26'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">26</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug26')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug26.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug26' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug26.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug26.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug26')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug27'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">27</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug27')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug27.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug27' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug27.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug27.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug27')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug28'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">28</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug28')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug28.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug28' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug28.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug28.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug28')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug29'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">29</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug29')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug29.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug29' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug29.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug29.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug29')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug30'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">30</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug30')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug30.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug30' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug30.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug30.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug30')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+      <form action="{{ route('CalendarController.ChangeAugustDayDescription', { day: 'aug31'}) }}" method="post">
+        {{ csrfField() }}
+        <div class="day">
+          <h3 class="day_number">31</h3>
+          @loggedIn
+            @if(descriptionClicked == 'aug31')
+              <textarea 
+                class="description_textarea" 
+                name="description" 
+                maxLength="100"
+              >{{ aug31.description }}</textarea>
+            @else
+              <a class="description_button" href="{{ route('CalendarController.augustDescriptionClick', { day: 'aug31' }) }}">
+                <textarea 
+                  class="description_textarea" 
+                  readonly
+                >{{ aug31.description }}</textarea>
+              </a>
+            @endif
+          @else
+            <textarea 
+              class="description_textarea" 
+              readonly
+            >{{ aug31.description }}</textarea>
+          @endloggedIn
+        </div>
+        @loggedIn
+          @if(descriptionClicked == 'aug31')
+            <button class="done_btn" type="submit">DONE</button>
+          @endif
+        @endloggedIn
+      </form>
+    </div>
+  </div>
+  <div class="months_list_container">
+    <a href="/september">SEPTEMBER</a>
+    <a href="/october">OCTOBER</a>
+    <a href="/november">NOVEMBER</a>
+    <a href="/december">DECEMBER</a>
+  </div>
+</div>
+@endsection

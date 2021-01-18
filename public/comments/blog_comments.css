@@ -1,0 +1,99 @@
+.textarea_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7px;
+}
+
+#blog_comments_textarea {
+  overflow: hidden;
+  height: 1.7em;
+  width: 28.9em;
+  outline: none;
+  border-width: 4px;
+  border-color: black;
+  border-radius: 27px 0px 0px 27px;
+  resize: none;
+  font-family: 'Mukta', sans-serif;
+  font-size: 29px;
+  text-align: center;
+  line-height: 34px;
+  text-justify: center;
+}
+
+.send_btn {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 75px;
+  margin-top: 5px;
+  color: black;
+}
+
+.error_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+span {
+  font-family: 'Rubik', sans-serif;
+  font-size: 21px;
+  padding: 22px;
+  margin-top: -18px;
+  background-color: gray;
+  max-width: 22em;
+  width: 22em;
+  text-align: center;
+}
+
+.blog_comments_container {
+  overflow-y: scroll;
+  height: 93em; 
+  margin-bottom: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen 
+  and (device-width : 375px) 
+  and (device-height : 812px) 
+  and (-webkit-device-pixel-ratio : 3) { 
+    .blog_comments_container {
+      height: 116.5em !important;
+    }
+  }
+
+.comment_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+  width: 42em;
+}
+
+.username {
+  color: black;
+  font-family: 'Merriweather Sans', sans-serif;
+  width: 20em;
+  border: none;
+  text-align: center;
+  font-size: 24px;
+}
+
+.comment {
+  text-align: center;
+  width: 100%;
+  color: black;
+  font-family: 'Mukta', sans-serif;
+  line-height: 27px;   
+  font-size: 22px; 
+}
+
+.delete_btn {
+  text-decoration: none;                color: rgb(0, 153, 255);
+  color: black;
+  font-size: 25px;
+}

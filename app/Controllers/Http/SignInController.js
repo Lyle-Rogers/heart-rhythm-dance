@@ -4,26 +4,41 @@ const User = use('App/Models/User')
 const Hash = use('Hash')
 
 class SignInController {
-  async login({ response, auth, request, session }) {
-    const password = request.all().password;
+  async signIn({ response, auth, request, session }) {
+    const { username, password, remember_me } = request.all();
+    
+    const user = await User.query()
+      .where('username', username)
+      .first()
 
-    const user = await User.findBy('id', 1);
+    if (user) {
+      const verification = await Hash.verify(password, user.password)
 
-    const passwordVerified = await Hash.verify(password, user.password)
+      if (verification) {
+        await auth.remember(!!remember_me).login(user)
 
-    if (passwordVerified) {
-      await auth.remember(true).login(user)
-    } else {
-      session.flash({
-          notification: {
-              message: 'Wrong password, please try again.'
-          }
-      })
+        return response.route('/blog')
+      } else {
+        session.flash({ message: "Your password was incorrect. Please try again." })
 
-      return response.redirect('back')
+        return response.redirect('back')
+      }
     }
+    session.flash({ message: "Couldn't find your username. Please check to see if it's correct or contact us for help." })
 
-    return response.route('/')
+    return response.redirect('back')
+  }
+
+  async register({ response, request, auth }) {
+    const user = await User.create(request.only(['username', 'password']));
+
+    await user.save();
+
+    const rememberMe = request.remember_me;
+
+    await auth.remember(!!rememberMe).login(user);
+
+    return response.route('/blog')
   }
 }
 

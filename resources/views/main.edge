@@ -8,25 +8,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
   
   {{ style('main') }}
 
-  <title>HEART RHYTHM DANCE 2021</title>
+  <title>HEART RHYTHM DANCE</title>
 
   @!section('extracss') 
 </head>
 <body>
   <div class="main_content">
-    <div class="signin_signout_btns">
-      @loggedIn
-        <a class="sign_out_btn" href="/sign_out">Sign Out</a>
-      @else
-        <a class="sign_in_btn" href="/sign_in">Sign In</a>
-      @endloggedIn
-    </div>
     <div class="logo_container">
-      <a class="logo_btn" href="/"><h1 class="logo">HEART RHYTHM DANCE 2021</h1></a>
+      <a class="logo_btn" href="/"><h1 class="logo">HEART RHYTHM DANCE</h1></a>
     </div>
+    <nav class="navigation_container">
+      <a class="nav_1" href="/blog">BLOG</a>
+      <a class="nav_2" href="/january">CALENDAR</a>
+      @loggedIn
+        <a class="nav_3" href="/sign_out">SIGN OUT</a>
+      @else
+        <a class="nav_4" href="/register">REGISTER</a>
+        <a class="nav_5" href="/sign_in">SIGN IN</a>
+      @endloggedIn
+    </nav>
   </div>
   <div class="content_container">
     @!section('content')

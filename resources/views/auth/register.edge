@@ -1,0 +1,57 @@
+@layout('main')
+
+@section('extracss')
+  {{ style('auth/register') }}
+@endsection
+
+@section('content')
+  <form class="register_content" action="{{ route('SignInController.register') }}" method="POST">
+    {{ csrfField() }}
+
+    <input 
+      class="username" 
+      type="text" 
+      name="username" 
+      placeholder="Your Name"
+      value="{{ old('username', '') }}"
+    >
+    @if(hasErrorFor('username'))
+      <span class="input_errors">
+          {{ getErrorFor('username') }}
+      </span>
+    @endif
+
+    <input 
+      class="password" 
+      type="password" 
+      name="password"
+      placeholder="Password"
+      value="{{ old('password', '') }}"
+    >
+    @if(hasErrorFor('password'))
+        <span class="input_errors">
+            {{ getErrorFor('password') }}
+        </span>
+    @endif
+
+    <input 
+      class="password_confirmation" 
+      type="password" 
+      name="password_confirmation"
+      placeholder="Confirm Password"
+      value="{{ old('password_confirmation', '') }}"
+    >
+    @if(hasErrorFor('password_confirmation'))
+        <span class="input_errors">
+            {{ getErrorFor('password_confirmation') }}
+        </span>
+    @endif
+
+    <div class="remember_me_container">
+      <input class="checkbox" type="checkbox" name="remember_me">
+      Remember Me
+    </div>
+
+    <button class="register_btn" type="submit">Register</button>
+  </form>
+@endsection

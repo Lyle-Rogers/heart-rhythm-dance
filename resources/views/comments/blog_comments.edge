@@ -1,0 +1,49 @@
+@layout('main')
+
+@section('extracss')
+  {{ style('comments/blog_comments') }}
+@endsection
+
+@section('content')
+  <form action="{{ route('BlogController.sendBlogComment', { id: blogBeingCommented.id }) }}" method="POST">
+    {{ csrfField() }}
+
+    <div class="textarea_content">
+      <script>
+        function autoheight(x) {
+          x.style.height = "5px";
+          x.style.height = (15+x.scrollHeight)+"px";
+        }
+      </script>
+      <textarea 
+        id="blog_comments_textarea" 
+        name="blog_comment" 
+        onkeyup="autoheight(this)"
+        value="{{ old('blog_comment', '') }}"
+      ></textarea>
+      <div class="send_btn_container">
+        <button type="submit" class="send_btn"><i class="fas fa-angle-double-right"></i></button>
+      </div>
+    </div>
+    <div class="error_content">
+      @if(hasErrorFor('blog_comment'))
+        <span>
+          {{ getErrorFor('blog_comment') }}
+        </span>
+      @endif
+    </div>
+  </form>
+  <div class="blog_comments_container">
+    @each(comment in comments)
+      <div class="comment_container">
+        <h3 class="username">{{ comment.username }}</h3>
+        <p class="comment" readonly>{{ comment.comment }}</p>
+        @if(comment.user_id === userLoggedIn)
+          <a class="delete_btn" href="{{ route('BlogController.deleteComment', { id: comment.id }) }}"><i id="delete_svg" class="fas fa-trash"></i></a>
+        @elseif(auth.user.admin === admin)
+          <a class="delete_btn" href="{{ route('BlogController.deleteComment', { id: comment.id }) }}"><i id="delete_svg" class="fas fa-trash"></i></a>
+        @endif
+      </div>
+    @endeach
+  </div>
+@endsection
