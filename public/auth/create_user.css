@@ -1,4 +1,4 @@
-.register_content {
+.create_user_content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,8 +10,8 @@
   margin-top: 5px;
   margin-bottom: 5px;
   background-color: grey;
-  max-width: 16em;
-  width: 16em;
+  max-width: 17.5em;
+  width: 17.5em;
   text-align: center;
   font-family: 'Rubik', sans-serif;
 }
@@ -19,47 +19,30 @@
 .username {
   border: none;
   border-bottom: 3px solid black;
-  width: 17em;
+  width: 22em;
   outline: none;
   text-align: center;
   font-size: 20px;
-  margin-top: 3em;
+  margin-top: 2em;
 }
 
 .password {
   border: none;
   border-bottom: 3px solid black;
-  width: 17em;
+  width: 22em;
   outline: none;
   text-align: center;
   font-size: 20px;
-  margin-top: 1.5em;
+  margin-top: 2em;
 }
 
-.password_confirmation {
-  border: none;
-  border-bottom: 3px solid black;
-  width: 17em;
-  outline: none;
-  text-align: center;
-  font-size: 20px;
-  margin-top: 1.5em;
-}
-
-.remember_me_container {
-  font-family: 'Oswald', sans-serif;
-  margin-top: 4px;
-  margin-right: 11.3em;
-  font-size: 19px;
-}
-
-.register_btn {
+.create_user_btn {
   font-family: 'Roboto Slab', serif;
   border: none;
   outline: none;
   background: none;
   color: white;
-  margin-top: 15px;
+  margin-top: 25px;
   font-size: 20px;
   padding: 5px 5px 5px 5px;
   background-color: black;

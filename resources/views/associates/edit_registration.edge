@@ -1,0 +1,195 @@
+@layout('main')
+
+@section('extracss')
+  {{ style('pages/register') }}
+@endsection
+
+@section('content')
+  <form class="register_content" action="{{ route('RegisterController.updateRegistration', { id: register.id }) }}" method="post">
+    {{ csrfField() }}
+
+    <input
+      class="inputs"
+      type="text"
+      name="student_name"
+      placeholder="Student Name"
+      maxlength="80"
+      value="{{ register.student_name }}"
+    >
+
+    <div class="styles_and_age_group_container">
+      <div class="dropdown">
+        <div class="dropbtn">Age Group</div>
+        <div class="dropdown-content">
+          <div class="dropdown_content_container">
+            <div class="option_container">
+              <input type="checkbox" {{ fourToSix }} name="fourToSix" id="fourToSix">
+              <label for="fourToSix">4 - 6</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ sixToHeight }} name="sixToHeight" id="sixToHeight">
+              <label for="sixToHeight">6 - 8</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ nineToEleven }} name="nineToEleven" id="nineToEleven">
+              <label for="nineToEleven">9 - 11</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ twelveToFourteen }} name="twelveToFourteen" id="twelveToFourteen">
+              <label for="twelveToFourteen">12 - 14</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ twelvePluss }} name="twelvePluss" id="twelvePluss">
+              <label for="twelvePluss">12 +</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ fifteenPluss }} name="fifteenPluss" id="fifteenPluss">
+              <label for="fifteenPluss">15 +</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <div class="dropbtn">Styles</div>
+        <div class="dropdown-content">
+          <div class="dropdown_content_container">
+            <div class="option_container">
+              <input type="checkbox" {{ tecChoreography }} name="tecChoreography" id="tecChoreography">
+              <label for="tecChoreography">Tec & Choreography</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ tumblingAcro }} name="tumblingAcro" id="tumblingAcro">
+              <label for="tumblingAcro">Tumbling & Acro</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ balletPointe }} name="balletPointe" id="balletPointe">
+              <label for="balletPointe">Ballet & Pointe</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ hipHop }} name="hipHop" id="hipHop">
+              <label for="hipHop">Hip Hop</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ aerialArts }} name="aerialArts" id="aerialArts">
+              <label for="aerialArts">Aerial Arts</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ jazzFunk }} name="jazzFunk" id="jazzFunk">
+              <label for="jazzFunk">Jazz Funk</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ yoga }} name="yoga" id="yoga">
+              <label for="yoga">Yoga</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ barreFitness }} name="barreFitness" id="barreFitness">
+              <label for="barreFitness">Barre Fitness</label>
+            </div>
+            <div class="option_container">
+              <input type="checkbox" {{ bellyDance }} name="bellyDance" id="bellyDance">
+              <label for="bellyDance">Belly Dance</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="age_container">
+      <input
+        class="age"
+        type="text"
+        name="age"
+        placeholder="Age"
+        maxlength="50"
+        value="{{ register.age }}"
+      >
+
+      <input
+        class="date_of_birth"
+        type="text"
+        name="date_of_birth"
+        placeholder="Date of Birth"
+        maxlength="30"
+        value="{{ register.date_of_birth }}"
+      >
+    </div>
+
+    <div class="gender_container">
+      <input type="checkbox" {{ male }} id="male" name="malee"/>
+      <label for="male" class="male">Male</label>
+      <input type="checkbox" {{ female }} id="female" name="femalee" />
+      <label for="female" class="female">Female</label>
+    </div>
+
+    <input
+        class="inputs"
+        type="text"
+        id="name_of_parents"
+        name="name_of_parents"
+        placeholder="Name of Parents"
+        maxlength="150"
+        value="{{ register.name_of_parents }}"
+    >
+
+    <input
+        class="inputs"
+        type="text"
+        name="health_conditions"
+        placeholder="Health Conditions or Allergies... Please Explain"
+        maxlength="250"
+        value="{{ register.health_conditions }}"
+    >
+
+    <input
+        class="inputs"
+        type="text"
+        name="emergency_contacts"
+        placeholder="Contacts Incase of Emergency"
+        maxlength="150"
+        value="{{ register.emergency_contacts }}"
+    >
+
+    <div class="payment_method_container">
+      <h4 class="payment_method_label">Method of payment:</h4>
+      <div class="payment_inputs">
+        <input type="checkbox" id="cash_payment" {{ cash }} name="cash_payment_monthly"/>
+        <label for="cash_payment" class="cash_payment_label">Cash Payment Monthly</label>
+        <input type="checkbox" id="online_payment" {{ online }} name="online_payment_monthly" />
+        <label for="online_payment" class="online_payment_label">Online Payment Monthly</label>
+      </div>
+    </div>
+    <div class="terms_container">
+      <h4>*By signing below I agree that the Teacher nor the Studio is responsible for injuries in class.</h4>
+      <h4>-We encourage each student to go at their own physical and mental paste. We also spot and</h4>
+      <h4>provide safety equipment.</h4>
+      <h4>* I’m also aware that if the child/student misses four weeks of class he/she would have to re-pay</h4>
+      <h4>the registration fee of $300 pesos, if spot is still available.</h4>
+      <h4>*Lastly I’m aware that pictures will occasionally be taken of the activity in class and shared.</h4>
+      <h4>Please inform Director of any concerns or questions</h4>
+    </div>
+    <div class="agree_container">
+      <h4 class="sign_label">Sign:</h4>
+      <input
+        class="sign_input"
+        type="text"
+        name="sign"
+        maxlength="120"
+        value="{{ register.sign }}"
+      >
+      <h4 class="date_label">Date:</h4>
+      <input
+        class="date_input"
+        type="text"
+        name="date"
+        maxlength="40"
+        value="{{ register.date }}"
+      >
+    </div>
+    <div class="welcome_to_the_family_text">
+      <h4>Keep your heart pure for that’s where we create art🖤</h4>
+      <h4>》Welcome to our Dance family《</h4>
+      <h4>We are glad to have you!</h4>
+    </div>
+    <button class="register_btn" type="submit">EDIT REGISTRATION</button>
+  </form>
+@endsection

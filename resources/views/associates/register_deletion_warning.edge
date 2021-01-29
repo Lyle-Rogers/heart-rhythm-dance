@@ -1,0 +1,16 @@
+@layout('main')
+
+@section('extracss')
+  {{ style('associates/register_deletion_warning') }}
+@endsection
+
+@section('content')
+  <div class="deletion_warning_content">
+    <div class="warning_container">
+      <p class="warning">
+        Are you sure you want to deregister {{ studentName }}? 
+      </p>
+      <a class="deregister_btn" href="{{ route('RegisterController.deleteRegistraition', { id: registerId }) }}">DEREGISTER</a>
+    </div>
+  </div>
+@endsection

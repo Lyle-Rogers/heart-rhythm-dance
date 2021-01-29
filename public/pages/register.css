@@ -1,0 +1,227 @@
+.register_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.inputs {
+  border: none;
+  border-bottom: 3px solid black;
+  width: 31em;
+  outline: none;
+  text-align: center;
+  font-size: 28px;
+  margin-top: 2.8em;
+}
+
+.dropbtn {
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 24px;
+  margin-top: .2em;
+  border: none;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  width: 14em;
+  text-align: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 23em;
+  box-shadow: 0px 11px 22px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown_content_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.option_container {
+  font-family: 'Arimo', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-size: 28px;
+  width: 100%;
+}
+
+.dropdown_content_container label {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.option_container:hover {background-color: grey}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.age {
+  border: none;
+  border-bottom: 3px solid black;
+  width: 5em;
+  outline: none;
+  text-align: center;
+  font-size: 28px;
+  margin-top: 1.5em;
+  margin-right: 2em;
+}
+
+.date_of_birth {
+  border: none;
+  border-bottom: 3px solid black;
+  width: 10em;
+  outline: none;
+  text-align: center;
+  font-size: 28px;
+  margin-top: 1.5em;
+}
+
+.gender_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Oswald', sans-serif;
+  margin-top: 2em;
+  font-size: 28px;
+  margin-bottom: 1.1em;
+}
+
+#male {
+  margin-top: 1px;
+  margin-right: 5px;
+}
+
+#female {
+  margin-top: 1px;
+  margin-right: 5px;
+  margin-left: 2em;
+}
+
+#name_of_parents {
+  margin-top: 6px;
+}
+
+.payment_method_container {
+  font-family: 'Mukta', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4.3em;
+  margin-bottom: 3em;
+}
+
+.payment_inputs {
+  display: flex;
+  flex-direction: row;
+}
+
+.payment_method_label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+}
+
+#cash_payment {
+  margin-top: 16px;
+  margin-right: 4px;
+}
+
+.cash_payment_label {
+  margin-right: 2em;
+  font-size: 28px;
+}
+
+#online_payment {
+  margin-top: 16px;
+  margin-right: 4px;
+}
+
+.online_payment_label {
+  font-size: 28px;
+}
+
+.terms_container {
+  font-family: 'Mukta', sans-serif;
+  width: 41.3em;
+  font-size: 23px;
+  line-height: 43px;
+}
+
+.agree_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 11px;
+}
+
+.sign_label {
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: -12.7px;
+  margin-right: 2px;
+  font-size: 28px;
+}
+
+.sign_input {
+  border: none;
+  border-bottom: 3px solid black;
+  width: 18em;
+  outline: none;
+  text-align: center;
+  font-size: 28px;
+  margin-right: 15px;
+}
+
+.date_label {
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: -12.7px;
+  margin-right: 2px;
+  font-size: 28px;
+}
+
+.date_input {
+  border: none;
+  border-bottom: 3px solid black;
+  width: 5.5em;
+  outline: none;
+  text-align: center;
+  font-size: 28px;
+}
+
+.welcome_to_the_family_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Mukta', sans-serif;
+  font-size: 23px;
+  line-height: 43px;
+}
+
+.register_btn {
+  font-family: 'Roboto Slab', serif;
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 1em;
+  font-size: 28px;
+  padding: 6px 13px 6px 13px;
+  background-color: black;
+  border-radius: 10px 10px 10px 10px;
+}

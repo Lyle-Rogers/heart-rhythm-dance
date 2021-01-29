@@ -38,6 +38,10 @@ class User extends Model {
   blogs () {
     return this.hasMany('App/Models/Blog')
   }
+
+  registers () {
+    return this.hasMany('App/Models/Register')
+  }
 }
 
 module.exports = User

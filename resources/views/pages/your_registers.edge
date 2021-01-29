@@ -1,0 +1,24 @@
+@layout('main')
+
+@section('extracss')
+  {{ style('pages/your_registers')}}
+@endsection
+
+@section('content')
+  <div class="your_registers_content">
+    @each(register in registers)
+      <div class="register_container">
+        <div class="student_name_content">
+          <input type="text" class="student_name" value="{{ register.student_name }}" readonly>
+        </div>
+        <div class="btns_container">
+          <a href="#" class="pay_membership_btn">Pay Membership</a>
+          <div class="delete_edit_btns_container">
+            <a href="{{ route('RegisterController.deleteBtnClick', { id: register.id }) }}"><i id="delete_btn" class="fas fa-trash"></i></a>
+            <a href="{{ route('RegisterController.editBtnClick', { id: register.id }) }}"><i id="edit_btn" class="fas fa-pencil-alt"></i></a>
+          </div>
+        </div>
+      </div>
+    @endeach
+  </div>
+@endsection

@@ -1,0 +1,78 @@
+.your_registers_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+  margin-left: 22em;
+  overflow-y: scroll;
+  height: 94em;
+}
+
+@media only screen 
+  and (device-width : 375px) 
+  and (device-height : 812px) 
+  and (-webkit-device-pixel-ratio : 3) { 
+    .your_registers_content {
+      height: 118em !important;
+    }
+  }
+
+.register_container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+  background-color: grey;
+  border: 5px solid black;
+  width: 37em;
+  height: 4.5em;
+  border-radius: 19px 0px 0px 19px;
+}
+
+.student_name {
+  border: none;
+  outline: none;
+  text-align: center;
+  margin-top: 1.4em;
+  background-color: grey;
+  width: 14em;
+  font-size: 26px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left: 4px;
+}
+
+.btns_container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3.7em;
+}
+
+.pay_membership_btn {
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  padding: 5px 7px 5px 9px;
+  width: 7.7em;
+  border-radius: 0px 0px 0px 18px;
+  margin-left: -4px;
+}
+
+.delete_edit_btns_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 6.7px;
+}
+
+#delete_btn {
+  margin-right: 4.6em;
+  color: black;
+  font-size: 25px;
+  margin-left: -10px;
+}
+
+#edit_btn {
+  font-size: 25px;
+  color: black;
+}

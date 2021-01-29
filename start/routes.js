@@ -16,10 +16,10 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('auth/register')
+Route.on('/').render('auth/sign_in')
 
-Route.on('/register').render('auth/register')
-Route.post('/register', 'SignInController.register').validator('Register')
+Route.on('/create_user').render('auth.create_user')
+Route.post('/create_user', 'SignInController.createUser').validator('CreateUser')
 
 Route.on('/sign_in').render('auth/sign_in')
 Route.post('/sign_in', 'SignInController.signIn').validator('SignIn')
@@ -28,6 +28,17 @@ Route.get('/sign_out', async ({ auth, response }) => {
   await auth.logout();
   return response.redirect('back');
 })
+
+Route.on('/register').render('pages/register')
+Route.post('/register', 'RegisterController.register')
+
+Route.get('/your_registers', 'RegisterController.loadRegisters')
+Route.get('/your_registers/delete_click/:id', 'RegisterController.deleteBtnClick')
+Route.get('/your_registers/delete/:id', 'RegisterController.deleteRegistraition')
+Route.get('/your_register_edit/:id', 'RegisterController.editBtnClick')
+Route.post('/update_registration/:id', 'RegisterController.updateRegistration')
+
+Route.get('/admin', 'AdminController.loadAdminPage')
 
 Route.get('/blog', 'BlogController.loadBlog')
 Route.post('/blog', 'BlogController.sendBlog').validator('Blog')

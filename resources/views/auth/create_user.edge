@@ -1,18 +1,18 @@
 @layout('main')
 
 @section('extracss')
-  {{ style('auth/register') }}
+  {{ style('auth/create_user') }}
 @endsection
 
 @section('content')
-  <form class="register_content" action="{{ route('SignInController.register') }}" method="POST">
+  <form class="create_user_content" action="{{ route('SignInController.createUser') }}" method="post">
     {{ csrfField() }}
 
     <input 
       class="username" 
       type="text" 
       name="username" 
-      placeholder="Your Name"
+      placeholder="Your Username"
       value="{{ old('username', '') }}"
     >
     @if(hasErrorFor('username'))
@@ -35,7 +35,7 @@
     @endif
 
     <input 
-      class="password_confirmation" 
+      class="password" 
       type="password" 
       name="password_confirmation"
       placeholder="Confirm Password"
@@ -47,11 +47,6 @@
         </span>
     @endif
 
-    <div class="remember_me_container">
-      <input class="checkbox" type="checkbox" name="remember_me">
-      Remember Me
-    </div>
-
-    <button class="register_btn" type="submit">Register</button>
+    <button class="create_user_btn" type="submit">Create User</button>
   </form>
 @endsection

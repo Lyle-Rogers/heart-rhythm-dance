@@ -29,7 +29,7 @@ class SignInController {
     return response.redirect('back')
   }
 
-  async register({ response, request, auth }) {
+  async createUser({ response, request, auth }) {
     const user = await User.create(request.only(['username', 'password']));
 
     await user.save();
