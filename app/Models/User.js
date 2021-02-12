@@ -42,6 +42,10 @@ class User extends Model {
   registers () {
     return this.hasMany('App/Models/Register')
   }
+
+  payments () {
+    return this.hasMany('App/Models/MembershipPayment')
+  }
 }
 
 module.exports = User

@@ -50,6 +50,13 @@ Route.get('blog_comments/:id', 'BlogController.loadComments')
 Route.post('blog_comments/:id', 'BlogController.sendBlogComment').validator('BlogComments')
 Route.get('blog_comments/delete/:id', 'BlogController.deleteComment')
 
+Route.get('/payments/:registerId', 'PaymentController.directToPayments')
+Route.get('/start/payment/:style', 'PaymentController.startPay')
+Route.get('/payments/try/pay', 'PaymentController.tryPay')
+Route.get('pay/checkout', 'PaymentController.payCheckout')
+Route.get('/pay/error', 'PaymentController.payError')
+Route.get('/pay/success', 'PaymentController.paySuccess')
+
 Route.on('/calendar').render('calendar/months_list')
 
 Route.get('/january', 'CalendarController.loadJanuary')

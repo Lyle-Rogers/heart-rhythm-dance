@@ -8,8 +8,8 @@ class AdminController {
       .query()
       .orderBy('id', 'desc')
       .fetch()
-
-    return view.render('pages/admin', { registers: registers.toJSON() })
+    
+    return view.render('pages/admin', { registers: registers.toJSON() });
   }
 }
 

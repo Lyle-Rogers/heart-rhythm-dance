@@ -12,7 +12,7 @@
           <input type="text" class="student_name" value="{{ register.student_name }}" readonly>
         </div>
         <div class="btns_container">
-          <a href="#" class="pay_membership_btn">Pay Membership</a>
+          <a href="{{ route('PaymentController.directToPayments', { registerId: register.id }) }}" class="pay_membership_btn">Pay Membership</a>
           <div class="delete_edit_btns_container">
             <a href="{{ route('RegisterController.deleteBtnClick', { id: register.id }) }}"><i id="delete_btn" class="fas fa-trash"></i></a>
             <a href="{{ route('RegisterController.editBtnClick', { id: register.id }) }}"><i id="edit_btn" class="fas fa-pencil-alt"></i></a>
