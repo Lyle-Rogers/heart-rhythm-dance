@@ -2,6 +2,9 @@
 
 const Register = use('App/Models/Register')
 const Payment = use('App/Models/MembershipPayment')
+const User = use('App/Models/User')
+
+const moment = require('moment')
 
 const StripeController = use('App/Controllers/Http/StripeController')
 const Stripe = new StripeController()
@@ -9,81 +12,104 @@ const Stripe = new StripeController()
 class PaymentController {
   async directToPayments({ view, params, auth }) {
     const register = await Register.find(params.registerId);
+    const user = await User.find(auth.user.id)
+    const date = moment().format('MMM Do, YYYY')
+
+    user.register_being_payed = register.id;
+    await user.save()
 
     const tecChoreographyPayments = await Payment
       .query()
       .where('user_id', auth.user.id)
-      .where('style', 'tec & Choreography')
+      .where('style', 'tecChoreography')
+      .where('register_id', register.id)
+      .orderBy('id', 'desc')
       .fetch()
 
     const tumblingAcroPayments = await Payment
       .query()
       .where('user_id', auth.user.id)
-      .where('style', 'Tumbling & Acro')
+      .where('style', 'tumblingAcro')
+      .where('register_id', register.id)
+      .orderBy('id', 'desc')
       .fetch()
 
     const balletPointePayments = await Payment
       .query()
       .where('user_id', auth.user.id)
-      .where('style', 'Ballet & Pointe')
+      .where('style', 'balletPointe')
+      .where('register_id', register.id)
+      .orderBy('id', 'desc')
       .fetch()
 
     const hipHopPayments = await Payment
       .query()
       .where('user_id', auth.user.id)
-      .where('style', 'Hip Hop')
+      .where('register_id', register.id)
+      .where('style', 'hipHop')
+      .orderBy('id', 'desc')
       .fetch()
 
     const aerialArtsPayments = await Payment
       .query()
       .where('user_id', auth.user.id)
-      .where('style', 'Aerial Arts')
+      .where('register_id', register.id)
+      .where('style', 'aerialArts')
+      .orderBy('id', 'desc')
       .fetch()
 
     const jazzFunkPayments = await Payment
       .query()
       .where('user_id', auth.user.id)
-      .where('style', 'Jazz Funk')
+      .where('register_id', register.id)
+      .where('style', 'jazzFunk')
+      .orderBy('id', 'desc')
       .fetch()
 
     const yogaPayments = await Payment
       .query()
       .where('user_id', auth.user.id)
-      .where('style', 'Yoga')
+      .where('register_id', register.id)
+      .where('style', 'yoga')
+      .orderBy('id', 'desc')
       .fetch()
 
     const barreFitnessPayments = await Payment
       .query()
       .where('user_id', auth.user.id)
-      .where('style', 'Barre Fitness')
+      .where('register_id', register.id)
+      .where('style', 'barreFitness')
+      .orderBy('id', 'desc')
       .fetch()
 
     const bellyDancePayments = await Payment
       .query()
       .where('user_id', auth.user.id)
-      .where('style', 'Belly Dance')
+      .where('register_id', register.id)
+      .where('style', 'bellyDance')
+      .orderBy('id', 'desc')
       .fetch()
 
-    return view.render('pages/payments', { register: register, tecChoreographyPayments: tecChoreographyPayments.toJSON(), tumblingAcroPayments: tumblingAcroPayments.toJSON(), balletPointePayments: balletPointePayments.toJSON(), hipHopPayments: hipHopPayments.toJSON(), aerialArtsPayments: aerialArtsPayments.toJSON(), jazzFunkPayments: jazzFunkPayments.toJSON(), yogaPayments: yogaPayments.toJSON(), barreFitnessPayments: barreFitnessPayments.toJSON(), bellyDancePayments: bellyDancePayments.toJSON() })
+    return view.render('pages/payments', { date, register, tecChoreographyPayments: tecChoreographyPayments.toJSON(), tumblingAcroPayments: tumblingAcroPayments.toJSON(), balletPointePayments: balletPointePayments.toJSON(), hipHopPayments: hipHopPayments.toJSON(), aerialArtsPayments: aerialArtsPayments.toJSON(), jazzFunkPayments: jazzFunkPayments.toJSON(), yogaPayments: yogaPayments.toJSON(), barreFitnessPayments: barreFitnessPayments.toJSON(), bellyDancePayments: bellyDancePayments.toJSON() })
   }
 
-  async startPay({ params, response }) {
-    var styleBeingPayed = await Payment.find('6');
-
-    styleBeingPayed.style = params.style;
-    await styleBeingPayed.save()
+  async startPay({ response, auth, params }) {
+    const user = await User.find(auth.user.id)
+    user.style_being_payed = params.style;
+    await user.save()
 
     return response.redirect('/payments/try/pay')
   }
 
-  async tryPay({ response }) {
+  async tryPay({ response, auth }) {
     const success_url = Stripe.getSuccessURL()
     const error_url = Stripe.getErrorURL()
 
     var style = {};
 
-    const styleBeingPayed = await Payment.find('6');
-    if (styleBeingPayed.style == 'tecChoreography') {
+    const styleBeingPayed = auth.user.style_being_payed;
+
+    if (styleBeingPayed == 'tecChoreography') {
       style = {
         name: 'Tec & Choreography',
         description: "Heart Rhythm Dance Studio",
@@ -92,7 +118,7 @@ class PaymentController {
         currency: 'MXN',
       }
     }
-    if (styleBeingPayed.style == 'tumblingAcro') {
+    if (styleBeingPayed == 'tumblingAcro') {
       style = {
         name: 'Tumbling & Acro',
         description: "Heart Rhythm Dance Studio",
@@ -101,7 +127,7 @@ class PaymentController {
         currency: 'MXN',
       }
     }
-    if (styleBeingPayed.style == 'balletPointe') {
+    if (styleBeingPayed == 'balletPointe') {
       style = {
         name: 'Ballet & Pointe',
         description: "Heart Rhythm Dance Studio",
@@ -110,7 +136,7 @@ class PaymentController {
         currency: 'MXN',
       }
     }
-    if (styleBeingPayed.style == 'hipHop') {
+    if (styleBeingPayed == 'hipHop') {
       style = {
         name: 'Hip Hop',
         description: "Heart Rhythm Dance Studio",
@@ -119,7 +145,7 @@ class PaymentController {
         currency: 'MXN',
       }
     }
-    if (styleBeingPayed.style == 'aerialArts') {
+    if (styleBeingPayed == 'aerialArts') {
       style = {
         name: 'Aerial Arts',
         description: "Heart Rhythm Dance Studio",
@@ -128,7 +154,7 @@ class PaymentController {
         currency: 'MXN',
       }
     }
-    if (styleBeingPayed.style == 'jazzFunk') {
+    if (styleBeingPayed == 'jazzFunk') {
       style = {
         name: 'Jazz Funk',
         description: "Heart Rhythm Dance Studio",
@@ -137,7 +163,7 @@ class PaymentController {
         currency: 'MXN',
       }
     }
-    if (styleBeingPayed.style == 'yoga') {
+    if (styleBeingPayed == 'yoga') {
       style = {
         name: 'Yoga',
         description: "Heart Rhythm Dance Studio",
@@ -146,7 +172,7 @@ class PaymentController {
         currency: 'MXN',
       }
     }
-    if (styleBeingPayed.style == 'barreFitness') {
+    if (styleBeingPayed == 'barreFitness') {
       style = {
         name: 'Barre Fitness',
         description: "Heart Rhythm Dance Studio",
@@ -155,7 +181,7 @@ class PaymentController {
         currency: 'MXN',
       }
     }
-    if (styleBeingPayed.style == 'bellyDance') {
+    if (styleBeingPayed == 'bellyDance') {
       style = {
         name: 'Belly Dance',
         description: "Heart Rhythm Dance Studio",
@@ -196,22 +222,35 @@ class PaymentController {
     })
   }
 
-  async paySuccess ({ response, session }) {
+  async paySuccess ({ response, session, auth }) {
+    const styleBeingPayed = await auth.user.style_being_payed;
+    const registerBeingPayed = await auth.user.register_being_payed;
+
+    const createPayment = await auth.user.payments().create({
+      style: styleBeingPayed,
+      time_payed: moment().format("MMM Do, YYYY"),
+      register_id: registerBeingPayed
+    })
+
     session.flash({
       payment_message: 'Payment Succesful! Thanks for your participation.',
       class: 'success'
     })
-    response.redirect('/payments/74');
+
+    response.redirect(`/payments/${registerBeingPayed}`);
   }
 
-  async payError({ request, response, session }) {
+  async payError({ request, response, session, auth }) {
+    const registerBeingPayed = await auth.user.register_being_payed;
+
     const name = request.input('name')
     const message = request.input('message')
     session.flash({
       payment_message: 'Payment error! ' + name + ': ' + message,
       class: 'faild'
     })
-    response.redirect('/payments/74');
+
+    response.redirect(`/payments/${registerBeingPayed}`);
   }
 }
 

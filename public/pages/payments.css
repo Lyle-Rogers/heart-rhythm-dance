@@ -9,7 +9,7 @@
   padding: 15px;
   margin-top: 5px;
   margin-bottom: -17px;
-  background-color: rgb(10, 230, 127);
+  background-color: rgb(16, 190, 16);
   width: 31.7em;
   text-align: center;
   font-family: 'Rubik', sans-serif;
@@ -20,7 +20,7 @@
   padding: 15px;
   margin-top: 5px;
   margin-bottom: -17px;
-  background-color: rgb(165, 78, 7);
+  background-color: rgb(245, 38, 38);
   width: 31.7em;
   text-align: center;
   font-family: 'Rubik', sans-serif;
@@ -32,7 +32,6 @@
   align-items: center;
   overflow-y: scroll;
   height: 95em;
-  margin-bottom: 1em;
 }
 
 @media only screen 
@@ -70,6 +69,7 @@
   align-self: center;
   font-family: 'Oswald', sans-serif;
   font-size: 33px;
+  margin-left: 9px;
 }
 
 .payment_text {
@@ -79,29 +79,31 @@
   width: 16em;
   text-align: start;
   margin-top: 25px;
+  margin-left: 9px;
 }
 
 .pay_button {
   font-family: 'Roboto', sans-serif;
   font-size: 25px;
-  margin-top: 5.5em;
+  margin-top: 4.7em;
   align-self: center;
   outline: none;
   text-decoration: none;
   color: black;
-  background-color: rgb(16, 111, 219);
+  background-color: rgb(0, 116, 212);
   padding: 5px;
   border-radius: 7px;
   font-weight: 800;
+  margin-left: 9px;
 }
 
 .membership_payments_wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 7em;
+  height: 6.5em;
   overflow-y: scroll;
-  margin-top: 5px;
+  background-color: black;
 }
 
 .membership_payment_container {
@@ -111,8 +113,10 @@
 }
 
 .membership_payment {
-  font-size: 30px;
-  font-family: 'PT Sans', sans-serif;
+  font-size: 25px;
+  font-family: 'Noto Sans JP', sans-serif;
   margin-top: 3px;
   margin-left: 4px;
+  max-width: 36.3em;
+  color: white;
 }
