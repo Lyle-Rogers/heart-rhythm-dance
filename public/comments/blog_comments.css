@@ -40,12 +40,13 @@
 
 .error_span {
   font-family: 'Rubik', sans-serif;
-  font-size: 21px;
+  font-size: 28px;
   padding: 22px;
   margin-top: -18px;
+  margin-bottom: 4px;
   background-color: gray;
-  max-width: 22em;
-  width: 22em;
+  max-width: 23em;
+  width: 23em;
   text-align: center;
 }
 

@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1em;
   margin-left: 22em;
   overflow-y: scroll;
   height: 94em;
@@ -16,6 +15,10 @@
       height: 118em !important;
     }
   }
+
+.extra_space {
+  margin-top: 1em;
+}
 
 .register_container {
   display: flex;
@@ -56,6 +59,7 @@
   width: 7.7em;
   border-radius: 0px 0px 0px 18px;
   margin-left: -4px;
+  margin-top: -1px;
 }
 
 .delete_edit_btns_container {
