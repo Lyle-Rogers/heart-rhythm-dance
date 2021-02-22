@@ -6,7 +6,7 @@ const moment = require('moment')
 hooks.after.providersBooted(() => {
   const Exception = use('Exception')
 
-  Exception.handle('InvalidSessionException', ({ response }) => {
+  Exception.handle('InvalidSessionException', ( error, { response }) => {
     return response.redirect('/sign_in')
   })
 })

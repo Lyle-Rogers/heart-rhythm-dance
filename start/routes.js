@@ -34,7 +34,7 @@ Route.post('/register', 'RegisterController.register')
 
 Route.get('/your_registers', 'RegisterController.loadRegisters').middleware(['auth'])
 Route.get('/your_registers/delete_click/:id', 'RegisterController.deleteBtnClick')
-Route.get('/your_registers/delete/:id', 'RegisterController.deleteRegistraition')
+Route.get('/your_registers/delete/:id', 'RegisterController.deleteRegistration')
 Route.get('/your_register_edit/:id', 'RegisterController.editBtnClick')
 Route.post('/update_registration/:id', 'RegisterController.updateRegistration')
 

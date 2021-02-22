@@ -20,6 +20,31 @@
           </div>
         </div>
       </div>
+      @if(registerId == register.id)
+      <div id="{{ register.id }}" class="modal"> 
+        <div class="modal_container">
+          <span class="close">&times;</span>
+          <div class="modal_text_container">
+            <p class="modal_text">Are you sure you want to deregister {{ register.student_name }}? Your payment history will also be deleted.</p>
+          </div>
+          <a class="delete_registration_btn" href="{{ route('RegisterController.deleteRegistration', { id: register.id }) }}">DELETE REGISTRATION</a>
+        </div>
+      </div>
+      @endif
+      <script>
+        var modal = document.getElementById('{{ registerId }}');
+        var span = document.getElementsByClassName('close')[0];
+      
+        span.onclick = function() {
+          modal.style.display = 'none'
+        }
+      
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = 'none'
+          }
+        }
+      </script>
     @endeach
   </div>
 @endsection

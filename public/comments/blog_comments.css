@@ -52,7 +52,7 @@
 
 .blog_comments_container {
   overflow-y: scroll;
-  height: 93em; 
+  height: 87.4em; 
   margin-bottom: 3em;
   display: flex;
   flex-direction: column;
@@ -64,7 +64,7 @@
   and (device-height : 812px) 
   and (-webkit-device-pixel-ratio : 3) { 
     .blog_comments_container {
-      height: 116.5em !important;
+      height: 110.8em !important;
     }
   }
 

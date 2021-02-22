@@ -233,7 +233,7 @@ class PaymentController {
     })
 
     session.flash({
-      payment_message: 'Payment Succesful! Thanks for your participation.',
+      payment_message: `Payment Succesful! Thanks for your participation ${auth.user.username}.`,
       class: 'success'
     })
 

@@ -2,6 +2,7 @@
 
 const Blog = use('App/Models/Blog')
 const BlogComment = use('App/Models/BlogComment')
+const moment = require('moment')
 
 class BlogController {
   async loadBlog({ view, auth }) {
@@ -18,10 +19,12 @@ class BlogController {
   async sendBlog({ request, response, auth }) {
     const blog = request.all();
     const username = auth.user.username;
+    const createdAt = moment().format('MMM Do YYYY');
 
     const posted = await auth.user.blogs().create({
       blog_message: blog.blog_message,
-      username: username
+      username: username,
+      time_created: createdAt
     });
 
     return response.redirect('back');

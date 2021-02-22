@@ -5,6 +5,15 @@
   margin-top: 1em;
 }
 
+@media only screen 
+  and (device-width : 375px) 
+  and (device-height : 812px) 
+  and (-webkit-device-pixel-ratio : 3) { 
+    .register_content {
+      margin-top: 7em !important;
+    }
+  }
+
 .inputs {
   border: none;
   border-bottom: 3px solid black;

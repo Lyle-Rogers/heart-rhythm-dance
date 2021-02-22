@@ -64,26 +64,27 @@
 <div class="blog_wrapper">
   @each(blog in blogs)
     <div class="blog_content">
-      <div class="username">
-        <h4>{{ blog.username }}</h4>
-      </div>
-      <div class="blog_container">
-        <p class="blog">{{ blog.blog_message }}</p>
-      </div>
-      <div class="delete_edit_comments_btns_content">
+      <div class="blog_header">
         @if(admin === true)
           <div class="delete_edit_btns_container">
             <a class="delete_btn" href="{{ route('BlogController.deleteBlog', { id: blog.id }) }}"><i id="delete_svg" class="fas fa-trash"></i></a>
             <a class="edit_btn" href="{{ route('BlogController.editBlog', { id: blog.id }) }}"><i id="edit_svg" class="fas fa-pencil-alt"></i></a>
           </div>
-          <div class="comments_btn_content">
-            <a class="comments_btn" href="{{ route('BlogController.loadComments', { id: blog.id }) }}">Comments {{ blog.comment_amount }}</a>
+          <div class="username">
+            <h4>{{ blog.username }}</h4>
           </div>
         @else
-          <div class="comments_btn_content_2">
-            <a class="comments_btn_2" href="{{ route('BlogController.loadComments', { id: blog.id }) }}">Comments {{ blog.comment_amount }}</a>
+          <div class="username">
+            <h4>{{ blog.username }}</h4>
           </div>
         @endif
+      </div>
+      <div class="blog_container">
+        <p class="blog">{{ blog.blog_message }}</p>
+      </div>
+      <div class="comments_timestamp_content">
+        <div class="timestamp">{{ blog.time_created }}</div>
+        <a class="comments_btn" href="{{ route('BlogController.loadComments', { id: blog.id }) }}">Comments {{ blog.comment_amount }}</a>
       </div>
     </div>
   @endeach

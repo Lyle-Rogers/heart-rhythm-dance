@@ -85,15 +85,26 @@ class RegisterController {
     return view.render('pages/your_registers', { registers: registers.toJSON() })
   }
 
-  async deleteBtnClick({ view, params }) {
-    const registerId = params.id;
-    const register = await Register.find(params.id);
-    const studentName = register.student_name;
+  // async deleteBtnClick({ view, params }) {
+  //   const registerId = params.id;
+  //   const register = await Register.find(params.id);
+  //   const studentName = register.student_name;
 
-    return view.render('associates.register_deletion_warning', { registerId, studentName })
+  //   return view.render('associates.register_deletion_warning', { registerId, studentName })
+  // }
+
+  async deleteBtnClick({ view, params, auth }) {
+    const registerId = params.id;
+    const registers = await Register
+      .query()
+      .where('user_id', auth.user.id)
+      .orderBy('id', 'desc')
+      .fetch()
+
+    return view.render('pages.your_registers', { registerId, registers: registers.toJSON() })
   }
 
-  async deleteRegistraition({ params, response }) {
+  async deleteRegistration({ params, response }) {
     const register = await Register.find(params.id);
     await register.delete();
 
