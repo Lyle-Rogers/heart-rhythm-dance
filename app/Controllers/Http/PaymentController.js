@@ -225,6 +225,42 @@ class PaymentController {
   async paySuccess ({ response, session, auth }) {
     const styleBeingPayed = await auth.user.style_being_payed;
     const registerBeingPayed = await auth.user.register_being_payed;
+    const register = await Register.find(registerBeingPayed)
+
+    var paymentFor = '';
+    if (styleBeingPayed == 'tecChoreography') {
+      paymentFor = 'Tec & Choreography'
+    }
+    if (styleBeingPayed == 'tumblingAcro') {
+      paymentFor = 'Tumbling & Acro'
+    }
+    if (styleBeingPayed == 'balletPointe') {
+      paymentFor = 'Ballet & Pointe'
+    }
+    if (styleBeingPayed == 'hipHop') {
+      paymentFor = 'Hip Hop'
+    }
+    if (styleBeingPayed == 'aerialArts') {
+      paymentFor = 'Aerial Arts'
+    }
+    if (styleBeingPayed == 'jazzFunk') {
+      paymentFor = 'Jazz Funk'
+    }
+    if (styleBeingPayed == 'yoga') {
+      paymentFor = 'Yoga'
+    }
+    if (styleBeingPayed == 'barreFitness') {
+      paymentFor = 'Barre Fitness'
+    }
+    if (styleBeingPayed == 'bellyDance') {
+      paymentFor = 'Belly Dance'
+    }
+
+    var oldRegisterPayments = register.payments;
+    const newRegisterPayments = ` ${paymentFor}: ${moment().format('MMM Do YYYY')} |` + oldRegisterPayments;
+    
+    register.payments = newRegisterPayments;
+    await register.save()
 
     const createPayment = await auth.user.payments().create({
       style: styleBeingPayed,

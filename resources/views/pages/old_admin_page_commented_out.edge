@@ -1,0 +1,514 @@
+<div class="columns_wrapper">
+  @each(register in registers)
+    <div class="column_container">
+      <div class="student_name">
+        
+      </div>
+    </div>
+  @endeach
+</div>
+  
+  {{--  <div class="admin_content">
+    @each(register in registers)
+      <div class="register_container">
+        <div class="name_container">
+          <div class="name_text">Student Name:</div>
+          <input type="text" value="{{ register.student_name }}" class="name" readonly>
+        </div>
+        <div class="wrapper_of_data">
+          <div class="left_side_of_data">
+            <div class="age_group_container">
+              <div class="age_group_text">Age Group:</div>
+              <input type="text" class="age_group" value="{{ register.age_group }}" readonly>
+            </div>
+            <div class="age_container">
+              <div class="age_text">Age:</div>
+              <input type="text" class="age" value="{{ register.age }}" readonly>
+            </div>
+            <div class="date_of_birth_container">
+              <div class="date_of_birth_text">Date of Birth:</div>
+              <input type="text" value="{{ register.date_of_birth }}" class="date_of_birth" readonly>
+            </div>
+            <div class="male_female_container">
+              <div class="male_container">
+                <div class="male_text">Male</div>
+                @if(register.male === true)
+                  <div class="male_check_icon"><i class="fas fa-check"></i></div>
+                @else
+                  <div class="male_x_icon"><i class="fas fa-times"></i></div>
+                @endif
+              </div>
+              <div class="female_container">
+                <div class="female_text">Female</div>
+                @if(register.female === true)
+                  <div class="female_check_icon"><i class="fas fa-check"></i></div>
+                @else
+                  <div class="female_x_icon"><i class="fas fa-times"></i></div>
+                @endif
+              </div>
+            </div>
+            <div class="payment_method_container">
+              <div class="payment_label">Method of Payment:</div>
+              <div class="methods_container">
+                <div class="cash_container">
+                  <div class="cash_text">Cash</div>
+                  @if(register.cash_payment_monthly === true)
+                    <div class="cash_check_icon"><i class="fas fa-check"></i></div>
+                  @else
+                    <div class="cash_x_icon"><i class="fas fa-times"></i></div>
+                  @endif
+                </div>
+                <div class="online_container">
+                  <div class="online_text">Online</div>
+                  @if(register.online_payment_monthly === true)
+                    <div class="online_check_icon"><i class="fas fa-check"></i></div>
+                  @else
+                    <div class="online_x_icon"><i class="fas fa-times"></i></div>
+                  @endif
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="styles_side_of_data">
+            <div class="styles_label_container">
+              <div class="styles_label">Styles:</div>
+            </div>
+            <div class="styles_wrapper">
+              @if(register.styles.includes('Tec & Choreography'))
+                <div class="style">Tec & Choreography</div>
+              @endif
+              @if(register.styles.includes('Tumbling & Acro'))
+                <div class="style">Tumbling & Acro</div>
+              @endif
+              @if(register.styles.includes('Ballet & Pointe'))
+                <div class="style">Ballet & Pointe</div>
+              @endif
+              @if(register.styles.includes('Hip Hop'))
+                <div class="style">Hip Hop</div>
+              @endif
+              @if(register.styles.includes('Aerial Arts'))
+                <div class="style">Aerial Arts</div>
+              @endif
+              @if(register.styles.includes('Jazz Funk'))
+                <div class="style">Jazz Funk</div>
+              @endif
+              @if(register.styles.includes('Yoga'))
+                <div class="style">Yoga</div>
+              @endif
+              @if(register.styles.includes('Barre Fitness'))
+                <div class="style">Barre Fitness</div>
+              @endif
+              @if(register.styles.includes('Belly Dance'))
+                <div class="style">Belly Dance</div>
+              @endif
+            </div>
+          </div>
+        </div>
+        <div class="bottom_lines_container">
+          <div class="parents_container">
+            <div class="parents_text">Name of Parents:</div>
+            <input type="text" value="{{ register.name_of_parents }}" class="parents" readonly>
+          </div>
+          <div class="health_container">
+            <div class="health_text">Health Conditions:</div>
+            <input type="text" value="{{ register.health_conditions }}" class="health" readonly>
+          </div>
+          <div class="contacts_container">
+            <div class="contacts_text">Contacts:</div>
+            <input type="text" value="{{ register.emergency_contacts }}" class="contacts" readonly>
+          </div>
+          <div class="bottom_of_the_bottom">
+            <div class="sign_text">Sign:</div>
+            <input type="text" value="{{ register.sign }}" class="sign" readonly>
+            <div class="date_text">Date:</div>
+            <input type="text" value="{{ register.date }}" class="date" readonly>
+          </div>
+        </div>
+      </div>
+    @endeach
+    <div class="extra_space"></div>
+  </div>  --}}
+
+  {{--  .admin_content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    margin-top: 2.5px;
+    height: 95.4em;
+  }
+  
+  @media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+      .admin_content {
+        height: 119em !important;
+      }
+    }
+  
+  .register_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: gray;border-radius: 10px;
+    border: solid 5px black;
+    width: 39.5em;
+    margin-top: 1em;
+  }
+  
+  .name_container {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  
+  .name {
+    outline: none;
+    border: none;
+    border-bottom: solid 2px black;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 23px;
+    width: 10em;
+    background-color: gray;
+  }
+  
+  .wrapper_of_data {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 7px;
+  }
+  
+  .left_side_of_data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18.4em;
+  }
+  
+  .age_group_container {
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    font-family: 'Londrina Solid', cursive;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 12px;
+  }
+  
+  .age_group {
+    outline: none;
+    border: none;
+    width: 3em;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 21px;
+    margin-top: 5px;
+    background-color: gray;
+  }
+  
+  .age_container {
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    font-family: 'Londrina Solid', cursive;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .age {
+    outline: none;
+    border: none;
+    width: 2.1em;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 21px;
+    margin-top: 5px;
+    background-color: gray;
+  }
+  
+  .date_of_birth_container {
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    font-family: 'Londrina Solid', cursive;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .date_of_birth {
+    outline: none;
+    border: none;
+    width: 6em;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 21px;
+    margin-top: 5px;
+    background-color: gray;
+    margin-left: 8px;
+  }
+  
+  .male_female_container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 12px;
+    font-weight: 600;
+  }
+  
+  .male_container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .male_text {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 21px;
+  }
+  
+  .male_check_icon {
+    margin-left: 4px;
+    margin-top: 3px;
+    font-size: 20px;
+  }
+  
+  .male_x_icon {
+    margin-left: 4px;
+    margin-top: 2px;
+    font-size: 22px;
+  }
+  
+  .female_container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .female_text {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 21px;
+    margin-left: 17px;
+  }
+  
+  .female_check_icon {
+    margin-left: 4px;
+    margin-top: 3px;
+    font-size: 20px;
+  }
+  
+  .female_x_icon {
+    margin-left: 4px;
+    margin-top: 2px;
+    font-size: 22px;
+  }
+  
+  .payment_method_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7px;
+  }
+  
+  .payment_label {
+    font-size: 25px;
+    font-family: 'Londrina Solid', cursive;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  
+  .methods_container {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 21px;
+  }
+  
+  .cash_container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .cash_check_icon {
+    margin-left: 4px;
+    margin-top: 3px;
+    font-size: 20px;
+  }
+  
+  .cash_x_icon {
+    margin-left: 4px;
+    margin-top: 2px;
+    font-size: 22px;
+  }
+  
+  .online_container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 17px;
+  }
+  
+  .online_check_icon {
+    margin-left: 4px;
+    margin-top: 3px;
+    font-size: 20px;
+  }
+  
+  .online_x_icon {
+    margin-left: 4px;
+    margin-top: 2px;
+    font-size: 22px;
+  }
+  
+  .styles_side_of_data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 20em;
+    height: 13em;
+    border-radius: 10px;
+    margin-top: 1em;
+    margin-right: 1em;
+  }
+  
+  .styles_label_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 33px;
+  }
+  
+  .styles_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arimo', sans-serif;
+    font-size: 22px;
+    overflow-y: scroll;
+    height: 7.1em;
+  }
+  
+  .style {
+    margin-top: 8.2px;
+  }
+  
+  .bottom_lines_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .parents_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  
+  .parents {
+    outline: none;
+    border: none;
+    border-bottom: solid 2px black;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 23px;
+    width: 18.4em;
+    background-color: gray;
+    margin-top: -9px;
+  }
+  
+  .health_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .health {
+    outline: none;
+    border: none;
+    border-bottom: solid 2px black;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 23px;
+    width: 18em;
+    background-color: gray;
+    margin-top: -9px;
+  }
+  
+  .contacts_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .contacts {
+    outline: none;
+    border: none;
+    border-bottom: solid 2px black;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 23px;
+    width: 21.8em;
+    background-color: gray;
+    margin-top: -9px;
+  }
+  
+  .bottom_of_the_bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .sign {
+    outline: none;
+    border: none;
+    border-bottom: solid 2px black;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 23px;
+    width: 15em;
+    background-color: gray;
+    margin-top: -9px;
+  }
+  
+  .date_text {
+    margin-left: 16px;
+  }
+  
+  .date {
+    outline: none;
+    border: none;
+    border-bottom: solid 2px black;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 23px;
+    width: 6em;
+    background-color: gray;
+    margin-top: -9px;
+  }
+  
+  .extra_space {
+    margin-bottom: 13px;
+  }  --}}

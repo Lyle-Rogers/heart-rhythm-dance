@@ -6,123 +6,49 @@
 
 @section('content')
   <div class="admin_content">
-    @each(register in registers)
-      <div class="register_container">
-        <div class="name_container">
-          <div class="name_text">Student Name:</div>
-          <input type="text" value="{{ register.student_name }}" class="name" readonly>
-        </div>
-        <div class="wrapper_of_data">
-          <div class="left_side_of_data">
-            <div class="age_group_container">
-              <div class="age_group_text">Age Group:</div>
-              <input type="text" class="age_group" value="{{ register.age_group }}" readonly>
-            </div>
-            <div class="age_container">
-              <div class="age_text">Age:</div>
-              <input type="text" class="age" value="{{ register.age }}" readonly>
-            </div>
-            <div class="date_of_birth_container">
-              <div class="date_of_birth_text">Date of Birth:</div>
-              <input type="text" value="{{ register.date_of_birth }}" class="date_of_birth" readonly>
-            </div>
-            <div class="male_female_container">
-              <div class="male_container">
-                <div class="male_text">Male</div>
-                @if(register.male === true)
-                  <div class="male_check_icon"><i class="fas fa-check"></i></div>
-                @else
-                  <div class="male_x_icon"><i class="fas fa-times"></i></div>
-                @endif
-              </div>
-              <div class="female_container">
-                <div class="female_text">Female</div>
-                @if(register.female === true)
-                  <div class="female_check_icon"><i class="fas fa-check"></i></div>
-                @else
-                  <div class="female_x_icon"><i class="fas fa-times"></i></div>
-                @endif
-              </div>
-            </div>
-            <div class="payment_method_container">
-              <div class="payment_label">Method of Payment:</div>
-              <div class="methods_container">
-                <div class="cash_container">
-                  <div class="cash_text">Cash</div>
-                  @if(register.cash_payment_monthly === true)
-                    <div class="cash_check_icon"><i class="fas fa-check"></i></div>
-                  @else
-                    <div class="cash_x_icon"><i class="fas fa-times"></i></div>
-                  @endif
-                </div>
-                <div class="online_container">
-                  <div class="online_text">Online</div>
-                  @if(register.online_payment_monthly === true)
-                    <div class="online_check_icon"><i class="fas fa-check"></i></div>
-                  @else
-                    <div class="online_x_icon"><i class="fas fa-times"></i></div>
-                  @endif
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="styles_side_of_data">
-            <div class="styles_label_container">
-              <div class="styles_label">Styles:</div>
-            </div>
-            <div class="styles_wrapper">
-              @if(register.styles.includes('Tec & Choreography'))
-                <div class="style">Tec & Choreography</div>
-              @endif
-              @if(register.styles.includes('Tumbling & Acro'))
-                <div class="style">Tumbling & Acro</div>
-              @endif
-              @if(register.styles.includes('Ballet & Pointe'))
-                <div class="style">Ballet & Pointe</div>
-              @endif
-              @if(register.styles.includes('Hip Hop'))
-                <div class="style">Hip Hop</div>
-              @endif
-              @if(register.styles.includes('Aerial Arts'))
-                <div class="style">Aerial Arts</div>
-              @endif
-              @if(register.styles.includes('Jazz Funk'))
-                <div class="style">Jazz Funk</div>
-              @endif
-              @if(register.styles.includes('Yoga'))
-                <div class="style">Yoga</div>
-              @endif
-              @if(register.styles.includes('Barre Fitness'))
-                <div class="style">Barre Fitness</div>
-              @endif
-              @if(register.styles.includes('Belly Dance'))
-                <div class="style">Belly Dance</div>
-              @endif
-            </div>
-          </div>
-        </div>
-        <div class="bottom_lines_container">
-          <div class="parents_container">
-            <div class="parents_text">Name of Parents:</div>
-            <input type="text" value="{{ register.name_of_parents }}" class="parents" readonly>
-          </div>
-          <div class="health_container">
-            <div class="health_text">Health Conditions:</div>
-            <input type="text" value="{{ register.health_conditions }}" class="health" readonly>
-          </div>
-          <div class="contacts_container">
-            <div class="contacts_text">Contacts:</div>
-            <input type="text" value="{{ register.emergency_contacts }}" class="contacts" readonly>
-          </div>
-          <div class="bottom_of_the_bottom">
-            <div class="sign_text">Sign:</div>
-            <input type="text" value="{{ register.sign }}" class="sign" readonly>
-            <div class="date_text">Date:</div>
-            <input type="text" value="{{ register.date }}" class="date" readonly>
-          </div>
-        </div>
+    <div class="column_labels_wrapper">
+      <div class="student_name_column">
+        Student Name
       </div>
-    @endeach
-    <div class="extra_space"></div>
+      <div class="age_group_column">
+        Age Group
+      </div>
+      <div class="payment_method_column">
+        Payment Method
+      </div>
+      <div class="payment_so_far_column">
+        Payments so Far
+      </div>
+      <div class="styles_column">
+        Styles
+      </div>
+      <div class="username_column">
+        User Name
+      </div>
+      <div class="gender_column">
+        Gender
+      </div>
+      <div class="age_column">
+        Age
+      </div>
+      <div class="date_of_birth_column">
+        Date of Birth
+      </div>
+      <div class="contacts_column">
+        Contacts
+      </div>
+      <div class="name_of_parents_column">
+        Name of Parents
+      </div>
+      <div class="health_conditions_column">
+        Health Conditions
+      </div>
+      <div class="sign_column">
+        Sign
+      </div>
+      <div class="date_column">
+        Date
+      </div>
+    </div>
   </div>
 @endsection

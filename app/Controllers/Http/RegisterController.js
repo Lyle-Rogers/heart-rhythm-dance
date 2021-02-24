@@ -69,7 +69,9 @@ class RegisterController {
       cash_payment_monthly: registerForm.cash_payment_monthly,
       online_payment_monthly: registerForm.online_payment_monthly,
       sign: registerForm.sign,
-      date: registerForm.date
+      date: registerForm.date,
+      payments: '', 
+      user: auth.user.username
     })
 
     return response.redirect('/your_registers')
@@ -84,14 +86,6 @@ class RegisterController {
 
     return view.render('pages/your_registers', { registers: registers.toJSON() })
   }
-
-  // async deleteBtnClick({ view, params }) {
-  //   const registerId = params.id;
-  //   const register = await Register.find(params.id);
-  //   const studentName = register.student_name;
-
-  //   return view.render('associates.register_deletion_warning', { registerId, studentName })
-  // }
 
   async deleteBtnClick({ view, params, auth }) {
     const registerId = params.id;
