@@ -18,3 +18,4 @@ hooks.after.providersBooted(() => {
     return moment().format('MMMM')
   })
 })
+
