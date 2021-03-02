@@ -7,8 +7,10 @@
 @section('content')
   <div class="admin_content">
     <div class="column_labels_wrapper">
-      <div class="student_name_column">
-        Student Name
+      <div class="extra_space_for_studentname">
+        <div class="student_name_column">
+          Student Name
+        </div>
       </div>
       <div class="age_group_column">
         Age Group
@@ -16,8 +18,10 @@
       <div class="payment_method_column">
         Payment Method
       </div>
-      <div class="payment_so_far_column">
-        Payments so Far
+      <div class="extra_space_for_paymentssofar">
+        <div class="payments_so_far_column">
+          Payments so Far
+        </div>
       </div>
       <div class="styles_column">
         Styles
@@ -31,8 +35,10 @@
       <div class="age_column">
         Age
       </div>
-      <div class="date_of_birth_column">
-        Date of Birth
+      <div class="extra_space_for_dateofbirth">
+        <div class="date_of_birth_column">
+          Date of Birth
+        </div>
       </div>
       <div class="contacts_column">
         Contacts
@@ -46,9 +52,34 @@
       <div class="sign_column">
         Sign
       </div>
-      <div class="date_column">
-        Date
+      <div class="making_date_centered">
+        <div class="date_column">
+          Date
+        </div>
       </div>
+    </div>
+    <div class="columns_wrapper">
+      @each(register in registers)
+        <div class="column_container">
+          <div class="student_name">
+            <p>{{ register.student_name }}</p>
+          </div>
+          <div class="age_group">
+            <p>{{ register.age_group }}</p>
+          </div>
+          <div class="payment_method">
+            @if(register.cash_payment_monthly === true)
+              <p>Cash<p>
+            @endif
+            @if(register.online_payment_monthly === true)
+              <p>Online<p>
+            @endif
+          </div>
+          <div class="payments_so_far">
+            {{ register.payments }}
+          </div>
+        </div>
+      @endeach
     </div>
   </div>
 @endsection

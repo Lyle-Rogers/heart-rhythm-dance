@@ -273,7 +273,7 @@ class PaymentController {
       class: 'success'
     })
 
-    response.redirect(`/payments/${registerBeingPayed}`);
+    return response.redirect(`/payments/${registerBeingPayed}`);
   }
 
   async payError({ request, response, session, auth }) {
@@ -286,7 +286,7 @@ class PaymentController {
       class: 'faild'
     })
 
-    response.redirect(`/payments/${registerBeingPayed}`);
+    return response.redirect(`/payments/${registerBeingPayed}`);
   }
 }
 
