@@ -76,7 +76,53 @@
             @endif
           </div>
           <div class="payments_so_far">
-            {{ register.payments }}
+            <p>{{ register.payments }}</p>
+          </div>
+          <div class="styles">
+            @if(register.styles.includes('Tec & Choreography'))
+              <div class="style">Tec & Choreography</div>
+            @endif
+            @if(register.styles.includes('Tumbling & Acro'))
+              <div class="style">Tumbling & Acro</div>
+            @endif
+            @if(register.styles.includes('Ballet & Pointe'))
+              <div class="style">Ballet & Pointe</div>
+            @endif
+            @if(register.styles.includes('Hip Hop'))
+              <div class="style">Hip Hop</div>
+            @endif
+            @if(register.styles.includes('Aerial Arts'))
+              <div class="style">Aerial Arts</div>
+            @endif
+            @if(register.styles.includes('Jazz Funk'))
+              <div class="style">Jazz Funk</div>
+            @endif
+            @if(register.styles.includes('Yoga'))
+              <div class="style">Yoga</div>
+            @endif
+            @if(register.styles.includes('Barre Fitness'))
+              <div class="style">Barre Fitness</div>
+            @endif
+            @if(register.styles.includes('Belly Dance'))
+              <div class="style">Belly Dance</div>
+            @endif
+          </div>
+          <div class="username">
+            <p>{{ register.user }}</p>
+          </div>
+          <div class="gender">
+            @if(register.male === true)
+              <p>Male<p>
+            @endif
+            @if(register.female === true)
+              <p>Female<p>
+            @endif
+          </div>
+          <div class="age">
+            <p>{{ register.age }}</p>
+          </div>
+          <div class="date_of_birth">
+            <p>{{ register.date_of_birth }}</p>
           </div>
         </div>
       @endeach

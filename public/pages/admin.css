@@ -225,64 +225,146 @@
 
 .student_name {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  text-align: center;
   overflow-y: auto;
   justify-content: center;
   border-right: solid black 2px;
-  text-align: center;
   font-family: 'Noto Sans', sans-serif;
   font-size: 9px;
   font-weight: 600;
-  height: 3.5em;
-  width: 9.5em;
+  height: 3.6em;
+  width: 86px;
+}
+
+.student_name p {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .age_group {
   display: flex;
-  align-items: center;
-  overflow-y: auto;
   justify-content: center;
-  border-right: solid black 2px;
   text-align: center;
+  overflow-y: auto;
+  border-right: solid black 2px;
   font-family: 'Noto Sans', sans-serif;
   font-size: 9px;
   font-weight: 600;
-  height: 3.5em;
+  height: 3.6em;
   width: 3.8em;
+}
+
+.age_group p {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .payment_method {
   display: flex;
+  flex-direction: column;
   align-items: center;
   overflow-y: auto;
   justify-content: center;
   border-right: solid black 2px;
-  text-align: center;
   font-family: 'Noto Sans', sans-serif;
   font-size: 9px;
   font-weight: 600;
-  height: 3.5em;
-  width: 5.8em;
+  height: 3.6em;
+  width: 51px;
 }
 
 .payments_so_far {
+  display: flex;
+  justify-content: center;
   overflow-y: scroll;
   border-right: solid black 2px;
   text-align: center;
   font-family: 'Noto Sans', sans-serif;
   font-size: 9px;
   font-weight: 600;
-  height: 3.5em;
+  height: 3.6em;
   width: 10.9em;
 }
 
+.payments_so_far p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
 
+.styles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  border-right: solid black 2px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  height: 4.1em;
+  width: 10.5em;
+}
 
+.username {
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  border-right: solid black 2px;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  height: 3.6em;
+  width: 67px;
+}
 
+.username p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
 
+.gender {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  justify-content: center;
+  border-right: solid black 2px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  height: 3.6em;
+  width: 46px;
+}
 
+.age {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  justify-content: center;
+  border-right: solid black 2px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  height: 3.6em;
+  width: 41px;
+}
 
+.date_of_birth {
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  border-right: solid black 2px;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  height: 3.6em;
+  width: 8.4em;
+}
 
-
-
-
+.date_of_birth p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
