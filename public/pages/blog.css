@@ -97,7 +97,7 @@ span {
   display: flex;
   flex-direction: row;
   margin-bottom: -40px;
-  margin-left: 2.3em;
+  margin-left: 1.2em;
 }
 
 .delete_btn {
@@ -122,6 +122,10 @@ span {
   font-size: 35px;
 }
 
+.blog_container {
+  
+}
+
 .blog {
   text-align: center;
   width: 51em;
@@ -130,7 +134,7 @@ span {
   line-height: 23px;  
 }
 
-p {
+.blog p {
   font-size: 15px;   
 }
 
@@ -140,7 +144,7 @@ p {
 
 .timestamp {
   font-family: 'Anton', sans-serif;
-  font-size: 25px;
+  font-size: 27px;
 }
 
 .comments_btn {
@@ -150,5 +154,5 @@ p {
   color: black;
   font-size: 15px;
   display: flex;
-  font-size: 25px;
+  font-size: 27px;
 }

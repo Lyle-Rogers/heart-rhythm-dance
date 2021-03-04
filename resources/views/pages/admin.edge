@@ -40,8 +40,8 @@
           Date of Birth
         </div>
       </div>
-      <div class="contacts_column">
-        Contacts
+      <div class="emergency_contacts_column">
+        Emergency Contacts
       </div>
       <div class="name_of_parents_column">
         Name of Parents
@@ -58,14 +58,20 @@
         </div>
       </div>
     </div>
-    <div class="columns_wrapper">
+    <div class="rows_wrapper">
       @each(register in registers)
-        <div class="column_container">
+        <div class="row_container">
           <div class="student_name">
-            <p>{{ register.student_name }}</p>
+            @if(register.student_name === null)
+            @else
+              <p>{{ register.student_name }}</p>
+            @endif
           </div>
           <div class="age_group">
-            <p>{{ register.age_group }}</p>
+            @if(register.age_group === null)
+            @else
+              <p>{{ register.age_group }}</p>
+            @endif
           </div>
           <div class="payment_method">
             @if(register.cash_payment_monthly === true)
@@ -76,7 +82,10 @@
             @endif
           </div>
           <div class="payments_so_far">
-            <p>{{ register.payments }}</p>
+            @if(register.payments === null)
+            @else
+              <p>{{ register.payments }}</p>
+            @endif
           </div>
           <div class="styles">
             @if(register.styles.includes('Tec & Choreography'))
@@ -108,7 +117,10 @@
             @endif
           </div>
           <div class="username">
-            <p>{{ register.user }}</p>
+            @if(register.user === null)
+            @else
+              <p>{{ register.user }}</p>
+            @endif
           </div>
           <div class="gender">
             @if(register.male === true)
@@ -119,10 +131,46 @@
             @endif
           </div>
           <div class="age">
-            <p>{{ register.age }}</p>
+            @if(register.age === null)
+            @else
+              <p>{{ register.age }}</p>
+            @endif
           </div>
           <div class="date_of_birth">
-            <p>{{ register.date_of_birth }}</p>
+            @if(register.date_of_birth === null)
+            @else
+              <p>{{ register.date_of_birth }}</p>
+            @endif
+          </div>
+          <div class="emergency_contacts">
+            @if(register.emergency_contacts === null)
+            @else
+              <p>{{ register.emergency_contacts }}</p>
+            @endif
+          </div>
+          <div class="name_of_parents">
+            @if(register.name_of_parents === null)
+            @else
+              <p>{{ register.name_of_parents }}</p>
+            @endif
+          </div>
+          <div class="health_conditions">
+            @if(register.health_conditions === null)
+            @else
+              <p>{{ register.health_conditions }}</p>
+            @endif
+          </div>
+          <div class="sign">
+            @if(register.sign === null)
+            @else
+              <p>{{ register.sign }}</p>
+            @endif
+          </div>
+          <div class="date">
+            @if(register.date === null)
+            @else
+              <p>{{ register.date }}</p>
+            @endif
           </div>
         </div>
       @endeach
